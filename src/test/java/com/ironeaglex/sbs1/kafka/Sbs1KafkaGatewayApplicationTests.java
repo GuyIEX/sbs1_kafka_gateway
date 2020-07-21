@@ -1,10 +1,10 @@
-package com.ironeaglex.SBS1KafkaConnector;
+package com.ironeaglex.sbs1.kafka;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Sbs1KafkaConnectorApplicationTests {
+class Sbs1KafkaGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {

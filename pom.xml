@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ironeaglex</groupId>
-	<artifactId>SBS1KafkaConnector</artifactId>
+	<artifactId>sbs1-kafka-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SBS1KafkaConnector</name>
+	<name>SBS1 Kafka Gateway</name>
 	<description>SBS-1 (BaseStation) to Kafka Connector</description>
 
 	<properties>

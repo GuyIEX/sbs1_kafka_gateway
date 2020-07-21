@@ -1,4 +1,4 @@
-package com.ironeaglex.SBS1KafkaConnector;
+package com.ironeaglex.sbs1.kafka;
 
 import java.util.Arrays;
 
