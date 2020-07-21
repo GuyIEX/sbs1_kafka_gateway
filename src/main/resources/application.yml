@@ -1,0 +1,17 @@
+sbs1feed:
+    host: 127.0.0.1
+    port: 30003
+
+kafka:
+    topic: dump1090
+
+spring:
+  kafka:
+    bootstrap-servers:
+      - localhost:9092
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      retries: 0
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
