@@ -9,6 +9,35 @@ This application will connect to a decoded SBS-1 data feed, such as produced by 
 | ``MSG,3,333,272,AD2328,372,2020/07/21,18:05:22.417,2020/07/21,18:05:...`` | ``MSG-3-AD2328`` |
 | ``MSG,4,333,272,AD2328,372,2020/07/21,18:05:22.417,2020/07/21,18:05:...`` | ``MSG-4-AD2328`` |
 
+No processing of the data fields is performed in this connector, so all values are represented as strings. The following is an example JSON message published to Kafka.
+
+```json
+{
+    "messageType": "MSG",
+    "transmissionType": "3",
+    "sessionId": "333",
+    "aircraftId": "464",
+    "hexIdent": "A7C8EC",
+    "flightId": "564",
+    "generatedDate": "2020/07/22",
+    "generatedTime": "19:53:12.537",
+    "loggedDate": "2020/07/22",
+    "loggedTime": "19:53:12.537",
+    "callsign": "",
+    "altitude": "4925",
+    "groundSpeed": "",
+    "track": "",
+    "latitude": "40.59846",
+    "longitude": "-75.34039",
+    "verticalRate": "",
+    "squawk": "",
+    "alert": "0",
+    "emergency": "0",
+    "spi": "0",
+    "isOnGround": "0"
+}
+```
+
 ### Build
 
 This project uses the standard Spring Boot maven wrapper. Please adjust the following command for your environment.
@@ -28,10 +57,10 @@ All configuration is encapsulated in the standard Spring Boot file [application.
 
 ### Running
 
-You must have both a decoded SBS-1 feed (like from dump1090) and a Kafka instance available. Replace the respective hostname or IP address values in the following command and the gateway will start receiving SBS-1 messages and generating Kafka messages.
+You must have both a decoded SBS-1 feed (like from dump1090) and a Kafka instance available. Replace the respective hostname or IP address values in the following command to have the gateway start receiving SBS-1 messages and generating Kafka messages.
 
 ```
-mvn spring-boot:run "-Dspring.boot.run.args=--sbs1feed.host=X.X.X.X,--spring.kafka.bootstrap-servers=Y.Y.Y.Y:9092"
+./mvnw spring-boot:run "-Dspring.boot.run.args=--sbs1feed.host=X.X.X.X,--spring.kafka.bootstrap-servers=Y.Y.Y.Y:9092"
 ```
 
 You can see the JSON produced by using the Kafka console consumer. Replace the respective hostname or IP address value in the following command to connect to Kafka and view the messages from the default topic name.
